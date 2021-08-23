@@ -1,3 +1,4 @@
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
 
 import { PokemonsService } from './pokemons.service';
@@ -5,8 +6,11 @@ import { PokemonsService } from './pokemons.service';
 describe('PokemonsService', () => {
   let service: PokemonsService;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({});
+  beforeEach(async () => {
+    TestBed.configureTestingModule({
+      imports: [HttpClientModule],
+      providers: [PokemonsService, HttpClient],
+    });
     service = TestBed.inject(PokemonsService);
   });
 
