@@ -1,0 +1,63 @@
+<div class="section">
+  <div class="block">
+    <div class="field is-grouped">
+      <div class="control is-expanded">
+        <input
+          class="input"
+          type="text"
+          [formControl]="filter"
+          placeholder="Search by name or id"
+        />
+      </div>
+
+      <div class="select">
+        <select [(ngModel)]="sortingType" (ngModelChange)="onSort()">
+          <option [ngValue]="" selected>Sorting options</option>
+          <option [ngValue]="1">A to Z</option>
+          <option [ngValue]="2">Z to A</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="columns is-multiline">
+      <div
+        *ngFor="let item of pokemons"
+        class="column is-4-tablet is-3-desktop"
+      >
+        <div class="card">
+          <div class="card-image">
+            <figure class="image is-square">
+              <img
+                src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/{{
+                  getPokemonId(item.url)
+                }}.png"
+                alt="Card image cap"
+              />
+            </figure>
+          </div>
+
+          <div class="card-content">
+            <h5 class="title">
+              {{ item.name }}
+              <span class="subtitle has-text-grey"
+                >#{{ getPokemonId(item.url) }}</span
+              >
+            </h5>
+
+            <a [routerLink]="['/pokemons', item.name]" class="btn btn-primary"
+              >Detail</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    *ngIf="hideLoadMore"
+    class="button is-large is-primary mt-2"
+    (click)="loadMore()"
+  >
+    Load more
+  </button>
+</div>

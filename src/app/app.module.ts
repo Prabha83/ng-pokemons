@@ -1,18 +1,31 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HomeComponent } from './pages/home/home.component';
+import { PokemonsComponent } from './pages/pokemons/pokemons.component';
+import { PokemonDetailComponent } from './pages/pokemon-detail/pokemon-detail.component';
+import { PokemonsService } from './services/pokemons.service';
+import { ActivateAfterPokemonDataGuard } from './services/activateAfterPokemonDataGaurd';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    PokemonsComponent,
+    PokemonDetailComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    HttpClientModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [PokemonsService, ActivateAfterPokemonDataGuard],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

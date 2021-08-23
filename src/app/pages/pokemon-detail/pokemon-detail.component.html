@@ -1,0 +1,56 @@
+<div class="section">
+  <div class="columns mt-3">
+    <div class="column">
+      <div class="box">
+        <figure class="image is-thumbnail">
+          <img
+            class="image"
+            [src]="pokemonImage"
+            alt="{{ pokemonDetails.name }}"
+          />
+        </figure>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="box">
+        <h2 class="title">
+          {{ pokemonDetails?.name | uppercase }}
+          <small class="is-size-4 has-text-grey">#{{ pokemonId }}</small>
+        </h2>
+        <div class="columns">
+          <div class="column">
+            <p class="has-text-primary">Height</p>
+            <p>{{ pokemonHeight }} m</p>
+          </div>
+          <div class="column">
+            <p class="has-text-primary">Weight</p>
+            <p>{{ pokemonWeight }} kg</p>
+          </div>
+        </div>
+        <div class="columns">
+          <div class="column">
+            <h5 class="has-text-primary">Types</h5>
+            <div class="content">
+              <ul class="content">
+                <li *ngFor="let type of pokemonDetails.types">
+                  {{ type.type.name }}
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="column">
+            <h5 class="has-text-primary">Abilities</h5>
+            <div class="content">
+              <ul>
+                <li *ngFor="let ability of pokemonDetails.abilities">
+                  {{ ability.ability.name }}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
