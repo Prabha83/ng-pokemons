@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PokemonsService } from 'src/app/services/pokemons.service';
 
@@ -7,7 +7,6 @@ import { PokemonsService } from 'src/app/services/pokemons.service';
   templateUrl: './pokemon-detail.component.html',
 })
 export class PokemonDetailComponent implements OnInit {
-  @Input()
   pokemonDetails?: any;
 
   constructor(
@@ -24,7 +23,6 @@ export class PokemonDetailComponent implements OnInit {
 
   private getDetails(name: string) {
     this.pokemonService.getPokemonDetails(name).subscribe((data) => {
-      console.log(data);
       this.pokemonDetails = data;
     });
   }

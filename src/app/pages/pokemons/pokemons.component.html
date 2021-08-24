@@ -1,7 +1,7 @@
 <div class="section">
   <div class="block">
-    <div class="field is-grouped">
-      <div class="control is-expanded">
+    <div class="field is-grouped is-justify-content-space-between">
+      <div class="control">
         <input
           class="input"
           type="text"
@@ -53,11 +53,13 @@
       </div>
     </div>
   </div>
-  <button
-    *ngIf="hideLoadMore"
-    class="button is-large is-primary mt-2"
-    (click)="loadMore()"
-  >
-    Load more
-  </button>
+  <div class="control has-text-centered mt-3">
+    <button
+      *ngIf="hideLoadMore"
+      class="button is-large is-primary"
+      (click)="loadMore()"
+    >
+      Load more
+    </button>
+  </div>
 </div>

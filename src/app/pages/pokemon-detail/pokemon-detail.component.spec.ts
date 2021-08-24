@@ -25,9 +25,9 @@ describe('PokemonDetailComponent', () => {
     const mockPokemonService = jasmine.createSpyObj('PokemonsService', [
       'getPokemonDetails',
     ]);
-    mockPokemonService.getPokemonDetails.and.returnValue(
-      of(mockPokemonDetails)
-    );
+    (
+      mockPokemonService as jasmine.SpyObj<PokemonsService>
+    ).getPokemonDetails.and.returnValue(of(mockPokemonDetails));
 
     await TestBed.configureTestingModule({
       declarations: [PokemonDetailComponent],

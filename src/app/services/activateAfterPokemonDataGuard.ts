@@ -14,6 +14,9 @@ export class ActivateAfterPokemonDataGuard implements CanActivate {
         .then((response) => {
           this.pokemonService.pokemons = response.results;
           return true;
+        })
+        .catch((error) => {
+          return false;
         });
     } else {
       return true;

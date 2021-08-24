@@ -9,7 +9,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { PokemonsComponent } from './pages/pokemons/pokemons.component';
 import { PokemonDetailComponent } from './pages/pokemon-detail/pokemon-detail.component';
 import { PokemonsService } from './services/pokemons.service';
-import { ActivateAfterPokemonDataGuard } from './services/activateAfterPokemonDataGaurd';
+import { ActivateAfterPokemonDataGuard } from './services/activateAfterPokemonDataGuard';
 
 @NgModule({
   declarations: [

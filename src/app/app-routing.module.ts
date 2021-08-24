@@ -1,4 +1,4 @@
-import { ActivateAfterPokemonDataGuard } from './services/activateAfterPokemonDataGaurd';
+import { ActivateAfterPokemonDataGuard } from './services/activateAfterPokemonDataGuard';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
